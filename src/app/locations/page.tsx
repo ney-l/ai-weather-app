@@ -1,6 +1,7 @@
 import { AlertCard } from '@/components/AlertCard';
 import { InformationPanel } from '@/components/InfomationPanel';
 import { StatCard } from '@/components/StatCard';
+import { TempChart } from '@/components/TempChart';
 import { fetchWeatherQuery } from '@/graphql/queries';
 import { getClient } from '@/lib/apollo';
 
@@ -94,6 +95,7 @@ const WeatherPage = async ({ searchParams }: Props) => {
 
           <div className="space-y-3">
             {/* Temperature Chart */}
+            <TempChart results={results} />
             {/* Rain Chart */}
             {/* Humidity Chart */}
           </div>
