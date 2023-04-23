@@ -1,5 +1,6 @@
 import { AlertCard } from '@/components/AlertCard';
 import { InformationPanel } from '@/components/InfomationPanel';
+import { RainChart } from '@/components/RainChart';
 import { StatCard } from '@/components/StatCard';
 import { TempChart } from '@/components/TempChart';
 import { fetchWeatherQuery } from '@/graphql/queries';
@@ -94,9 +95,8 @@ const WeatherPage = async ({ searchParams }: Props) => {
           <hr className="mb-5" />
 
           <div className="space-y-3">
-            {/* Temperature Chart */}
             <TempChart results={results} />
-            {/* Rain Chart */}
+            <RainChart results={results} />
             {/* Humidity Chart */}
           </div>
         </div>
