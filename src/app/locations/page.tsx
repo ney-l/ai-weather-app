@@ -1,3 +1,6 @@
+import { AlertCard } from '@/components/AlertCard';
+import { InformationPanel } from '@/components/InfomationPanel';
+import { StatCard } from '@/components/StatCard';
 import { fetchWeatherQuery } from '@/graphql/queries';
 import { getClient } from '@/lib/apollo';
 
@@ -12,28 +15,26 @@ type Props = {
 const WeatherPage = async ({ searchParams }: Props) => {
   const client = getClient();
 
-  try {
-    const response = await client.query({
-      query: fetchWeatherQuery,
-      variables: {
-        current_weather: 'true',
-        longitude: searchParams?.long,
-        latitude: searchParams?.lat,
-        timezone: 'GMT',
-      },
-    });
+  const response = await client.query({
+    query: fetchWeatherQuery,
+    variables: {
+      current_weather: 'true',
+      longitude: searchParams?.long,
+      latitude: searchParams?.lat,
+      timezone: 'GMT',
+    },
+  });
 
-    const results: Root = response?.data?.weatherQuery;
-
-    console.log(results);
-  } catch (error) {
-    console.log(error);
-  }
+  const results: Root = response?.data?.weatherQuery;
 
   return (
-    <div>
-      WeatherPage
-      <p>{JSON.stringify(searchParams, null, 4)}</p>
+    <div className="flex flex-col min-h-screen md:flex-row">
+      <InformationPanel
+        city={searchParams?.city ?? ''}
+        lat={searchParams?.lat ?? ''}
+        long={searchParams?.long ?? ''}
+        results={results}
+      />
     </div>
   );
 };

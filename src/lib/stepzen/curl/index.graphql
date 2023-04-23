@@ -9,8 +9,8 @@ type CurrentWeather {
 type Daily {
   apparent_temperature_max: [Float]
   apparent_temperature_min: [Float]
-  sunrise: [DateTime]
-  sunset: [DateTime]
+  sunrise: [String]
+  sunset: [String]
   temperature_2m_max: [Float]
   temperature_2m_min: [Float]
   time: [Date]
