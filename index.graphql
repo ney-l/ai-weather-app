@@ -1,0 +1,3 @@
+schema @sdl(files: ["src/lib/stepzen/curl/index.graphql"]) {
+  query: Query
+}
