@@ -1,4 +1,5 @@
 import { AlertCard } from '@/components/AlertCard';
+import { HumidityChart } from '@/components/HumidityChart';
 import { InformationPanel } from '@/components/InfomationPanel';
 import { RainChart } from '@/components/RainChart';
 import { StatCard } from '@/components/StatCard';
@@ -97,7 +98,7 @@ const WeatherPage = async ({ searchParams }: Props) => {
           <div className="space-y-3">
             <TempChart results={results} />
             <RainChart results={results} />
-            {/* Humidity Chart */}
+            <HumidityChart results={results} />
           </div>
         </div>
       </div>
