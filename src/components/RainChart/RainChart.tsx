@@ -21,7 +21,7 @@ export const RainChart = ({ results }: Props) => {
         results.hourly.precipitation_probability[i],
     }))
 
-  const dataFormatter = (number: Number) => `${number} %`
+  const dataFormatter = (number: number) => `${number} %`
 
   return (
     <Card>

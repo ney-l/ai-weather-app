@@ -21,7 +21,7 @@ export const TempChart = ({ results }: Props) => {
       'Temperature (C)': results.hourly.temperature_2m[i],
     }))
 
-  const dataFormatter = (number: Number) => `${number}`
+  const dataFormatter = (number: number) => `${number}`
 
   return (
     <Card>

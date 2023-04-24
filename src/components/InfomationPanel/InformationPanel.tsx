@@ -1,5 +1,6 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
+
 import { CityPicker } from '@/components/CityPicker'
 import { parseWeatherCode } from '@/utils'
 
@@ -131,7 +132,7 @@ function SolarTile({
       {children}
 
       <div className="flex flex-1 justify-between items-center">
-        <p className="font-extralight">Sunrise</p>
+        <p className="font-extralight">{label}</p>
         <p className="uppercase text-2xl text-white">
           {time}
         </p>

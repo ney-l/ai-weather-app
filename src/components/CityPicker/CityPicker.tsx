@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Country, City } from 'country-state-city'
-import Select from 'react-select'
 import { GlobeIcon } from '@heroicons/react/solid'
+import { Country, City } from 'country-state-city'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import Select from 'react-select'
 
 type option = {
   value: {
@@ -84,8 +84,8 @@ export const CityPicker = () => {
               selectedCountry.value.isoCode
             )?.map((state) => ({
               value: {
-                latitude: state.latitude!,
-                longitude: state.longitude!,
+                latitude: state.latitude ?? '',
+                longitude: state.longitude ?? '',
                 countryCode: state.countryCode,
                 name: state.name,
                 stateCode: state.stateCode,

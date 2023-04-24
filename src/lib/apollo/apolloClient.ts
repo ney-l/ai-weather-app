@@ -3,7 +3,7 @@ import {
   InMemoryCache,
 } from '@apollo/client'
 
-let client: ApolloClient<any> | null = null
+let client: ApolloClient<unknown> | null = null
 
 export const getClient = () => {
   if (!client) {

@@ -21,7 +21,7 @@ export const HumidityChart = ({ results }: Props) => {
         results.hourly.relativehumidity_2m[i],
     }))
 
-  const dataFormatter = (number: Number) => `${number} %`
+  const dataFormatter = (number: number) => `${number} %`
 
   return (
     <Card>
