@@ -1,1 +1,1 @@
-export * from './parseWeatherCode';
+export * from './parseWeatherCode'

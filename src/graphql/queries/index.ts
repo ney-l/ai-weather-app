@@ -1,1 +1,1 @@
-export * from './fetchWeather';
+export * from './fetchWeather'

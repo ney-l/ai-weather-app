@@ -1,8 +1,8 @@
 export const parseWeatherCode: {
   [key: number]: {
-    icon: string;
-    label: string;
-  };
+    icon: string
+    label: string
+  }
 } = {
   0: {
     icon: 'cOld',
@@ -113,4 +113,4 @@ export const parseWeatherCode: {
     icon: 't04d',
     label: 'Thunderstorm',
   },
-};
+}

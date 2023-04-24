@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { Card, AreaChart, Title } from '@tremor/react';
+import { Card, AreaChart, Title } from '@tremor/react'
 
 type Props = {
-  results: Root;
-};
+  results: Root
+}
 
 export const TempChart = ({ results }: Props) => {
   const hourly = results?.hourly.time
@@ -19,9 +19,9 @@ export const TempChart = ({ results }: Props) => {
       time: Number(hour),
       'UV Index': results.hourly.uv_index[i],
       'Temperature (C)': results.hourly.temperature_2m[i],
-    }));
+    }))
 
-  const dataFormatter = (number: Number) => `${number}`;
+  const dataFormatter = (number: Number) => `${number}`
 
   return (
     <Card>
@@ -37,5 +37,5 @@ export const TempChart = ({ results }: Props) => {
         yAxisWidth={40}
       />
     </Card>
-  );
-};
+  )
+}

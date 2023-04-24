@@ -1,6 +1,9 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+} from '@apollo/client'
 
-let client: ApolloClient<any> | null = null;
+let client: ApolloClient<any> | null = null
 
 export const getClient = () => {
   if (!client) {
@@ -10,8 +13,8 @@ export const getClient = () => {
         Authorization: `apikey ${process.env.NEXT_PUBLIC_STEPZEN_API_KEY}`,
       },
       cache: new InMemoryCache(),
-    });
+    })
   }
 
-  return client;
-};
+  return client
+}

@@ -1,8 +1,13 @@
-'use client';
+'use client'
 
-import { Card, Divider, Subtitle, Text } from '@tremor/react';
+import {
+  Card,
+  Divider,
+  Subtitle,
+  Text,
+} from '@tremor/react'
 
-import { CityPicker } from '@/components/CityPicker';
+import { CityPicker } from '@/components/CityPicker'
 
 export default function Home() {
   return (
@@ -12,8 +17,8 @@ export default function Home() {
           AI Weather App
         </Text>
         <Subtitle className="text-xl text-center">
-          Powered by OpenAI, Next.js 13.3, Tailwind CSS, TypeScript, Tremor 2.0
-          & More!
+          Powered by OpenAI, Next.js 13.3, Tailwind CSS,
+          TypeScript, Tremor 2.0 & More!
         </Subtitle>
 
         <Divider className="my-10" />
@@ -23,5 +28,5 @@ export default function Home() {
         </Card>
       </Card>
     </div>
-  );
+  )
 }

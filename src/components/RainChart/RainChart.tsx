@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { Card, AreaChart, Title } from '@tremor/react';
+import { Card, AreaChart, Title } from '@tremor/react'
 
 type Props = {
-  results: Root;
-};
+  results: Root
+}
 
 export const RainChart = ({ results }: Props) => {
   const hourly = results?.hourly.time
@@ -17,10 +17,11 @@ export const RainChart = ({ results }: Props) => {
     .slice(0, 24)
     .map((hour, i) => ({
       time: Number(hour),
-      'Rain (%)': results.hourly.precipitation_probability[i],
-    }));
+      'Rain (%)':
+        results.hourly.precipitation_probability[i],
+    }))
 
-  const dataFormatter = (number: Number) => `${number} %`;
+  const dataFormatter = (number: Number) => `${number} %`
 
   return (
     <Card>
@@ -37,5 +38,5 @@ export const RainChart = ({ results }: Props) => {
         yAxisWidth={40}
       />
     </Card>
-  );
-};
+  )
+}

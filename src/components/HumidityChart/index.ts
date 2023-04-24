@@ -1,1 +1,1 @@
-export * from './HumidityChart';
+export * from './HumidityChart'

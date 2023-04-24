@@ -1,1 +1,1 @@
-export * from './RainChart';
+export * from './RainChart'

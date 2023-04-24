@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { Card, AreaChart, Title } from '@tremor/react';
+import { Card, AreaChart, Title } from '@tremor/react'
 
 type Props = {
-  results: Root;
-};
+  results: Root
+}
 
 export const HumidityChart = ({ results }: Props) => {
   const hourly = results?.hourly.time
@@ -17,10 +17,11 @@ export const HumidityChart = ({ results }: Props) => {
     .slice(0, 24)
     .map((hour, i) => ({
       time: Number(hour),
-      'Humidity (%)': results.hourly.relativehumidity_2m[i],
-    }));
+      'Humidity (%)':
+        results.hourly.relativehumidity_2m[i],
+    }))
 
-  const dataFormatter = (number: Number) => `${number} %`;
+  const dataFormatter = (number: Number) => `${number} %`
 
   return (
     <Card>
@@ -37,5 +38,5 @@ export const HumidityChart = ({ results }: Props) => {
         yAxisWidth={40}
       />
     </Card>
-  );
-};
+  )
+}

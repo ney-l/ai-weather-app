@@ -1,1 +1,1 @@
-export * from './TempChart';
+export * from './TempChart'
