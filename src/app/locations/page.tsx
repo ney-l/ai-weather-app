@@ -7,6 +7,8 @@ import { TempChart } from '@/components/TempChart'
 import { fetchWeatherQuery } from '@/graphql/queries'
 import { getClient } from '@/lib/apollo'
 
+export const revalidate = 60
+
 type Props = {
   searchParams?: {
     city?: string
