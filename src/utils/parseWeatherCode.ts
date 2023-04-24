@@ -5,15 +5,15 @@ export const parseWeatherCode: {
   }
 } = {
   0: {
-    icon: 'cOld',
+    icon: 'c01d',
     label: 'Clear sky',
   },
   1: {
-    icon: 'cO2d',
+    icon: 'c02d',
     label: 'Mainly clear',
   },
   2: {
-    icon: 'cO3d',
+    icon: 'c03d',
     label: 'Partly cloudy',
   },
   3: {
@@ -37,11 +37,11 @@ export const parseWeatherCode: {
     label: 'Drizzle',
   },
   55: {
-    icon: 'deld',
+    icon: 'd0ld',
     label: 'Drizzle',
   },
   56: {
-    icon: 'dOld',
+    icon: 'd0ld',
     label: 'Freezing Drizzle',
   },
   57: {
@@ -61,7 +61,7 @@ export const parseWeatherCode: {
     label: 'Rain',
   },
   66: {
-    icon: 'fOld',
+    icon: 'f0ld',
     label: 'Freezing Rain',
   },
   67: {
@@ -98,7 +98,7 @@ export const parseWeatherCode: {
     label: 'Snow Showers',
   },
   86: {
-    icon: 'sOld',
+    icon: 's0ld',
     label: 'Snow Showers',
   },
   95: {
