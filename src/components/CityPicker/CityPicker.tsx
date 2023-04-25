@@ -1,6 +1,9 @@
 'use client'
 
-import { GlobeIcon } from '@heroicons/react/solid'
+import {
+  GlobeIcon,
+  LocationMarkerIcon,
+} from '@heroicons/react/solid'
 import { Country, City } from 'country-state-city'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -64,7 +67,7 @@ export const CityPicker = () => {
           <label htmlFor="country">Country</label>
         </div>
         <Select
-          className="text-black"
+          className="text-slate-800 shadow-sm"
           value={selectedCountry}
           onChange={handleSelectedCountry}
           options={options}
@@ -73,11 +76,11 @@ export const CityPicker = () => {
       {selectedCountry && (
         <div className="space-y-2">
           <div className="flex items-center space-x-2 text-white/80">
-            <GlobeIcon className="h-5 w-5 text-white" />
+            <LocationMarkerIcon className="h-5 w-5 text-white" />
             <label htmlFor="city">City</label>
           </div>
           <Select
-            className="text-black"
+            className=" shadow-sm text-slate-800"
             value={selectedCity}
             onChange={handleSelectedCity}
             options={City.getCitiesOfCountry(

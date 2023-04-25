@@ -20,7 +20,7 @@ export const InformationPanel = ({
   const weather =
     parseWeatherCode[results.current_weather.weathercode]
   return (
-    <div className="bg-gradient-to-br text-white p-10">
+    <div className="bg-gradient-primary bg-cover bg-no-repeat bg-fixed bg-center text-white p-10">
       <div className="pb-5">
         <h1 className="text-6xl font-bold">
           {decodeURI(city)}
@@ -94,13 +94,13 @@ export const InformationPanel = ({
           date={results.daily.sunrise[0]}
           label="Sunrise"
         >
-          <SunIcon className="h-10 w-10 text-gray-400" />
+          <SunIcon className="h-10 w-10 text-slate-300" />
         </SolarTile>
         <SolarTile
           date={results.daily.sunset[0]}
           label="Sunset"
         >
-          <MoonIcon className="h-10 w-10 text-gray-400" />
+          <MoonIcon className="h-10 w-10 text-slate-300" />
         </SolarTile>
       </div>
     </div>
@@ -128,7 +128,7 @@ function SolarTile({
   )
 
   return (
-    <div className="flex items-center space-x-2 px-4 py-3 border border-[#6f90cd] rounded-md text-gray-400 bg-[#405885]">
+    <div className="flex items-center space-x-2 px-4 py-3 border rounded-md text-slate-300 bg-white bg-opacity-20 backdrop-blur-md backdrop-filter  border-white border-opacity-30 shadow-sm">
       {children}
 
       <div className="flex flex-1 justify-between items-center">
