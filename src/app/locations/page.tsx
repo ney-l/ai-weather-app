@@ -82,7 +82,6 @@ const WeatherPage = async ({ searchParams }: Props) => {
               {new Date(
                 results.current_weather.time
               ).toLocaleString()}
-              {results.timezone}
             </p>
           </div>
 
