@@ -6,14 +6,38 @@ import { StatCard } from '@/components/StatCard'
 import { TempChart } from '@/components/TempChart'
 import { fetchWeatherQuery } from '@/graphql/queries'
 import { getClient } from '@/lib/apollo'
+import {
+  CleanedData,
+  cleanData,
+  getBasePath,
+} from '@/utils'
 
-export const revalidate = 60
+export const revalidate = 86400
 
 type Props = {
   searchParams?: {
     city?: string
     lat?: string
     long?: string
+  }
+}
+
+async function fetchAiSummary(weatherData: CleanedData) {
+  try {
+    const url = `${getBasePath()}/api/weather/summary`
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        weatherData,
+      }),
+    })
+    const data = await res.json()
+    return data.content
+  } catch (error) {
+    console.error('Error in fetch AI Summary', error)
   }
 }
 
@@ -31,6 +55,13 @@ const WeatherPage = async ({ searchParams }: Props) => {
   })
 
   const results: Root = response?.data?.weatherQuery
+
+  const dataToSend = cleanData(
+    results,
+    searchParams?.city ?? ''
+  )
+
+  const aiSummary = await fetchAiSummary(dataToSend)
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
@@ -56,10 +87,7 @@ const WeatherPage = async ({ searchParams }: Props) => {
           </div>
 
           <div className="m-2 mb-10">
-            <AlertCard
-              message="AI Summary would show here"
-              warning
-            />
+            <AlertCard message={aiSummary} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
